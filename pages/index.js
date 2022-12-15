@@ -8,20 +8,20 @@ export default function IndexPage({ pets }) {
       </header>
       <main>
         <h2>pets</h2>
-        {pets.length > 0 && (
+        { pets.length > 0 && (
           <ul>
-            {pets.map((pet) => (
-              <li key={pet._id}>{pet?.name}</li>
-            ))}
+            { pets.map((pet) => (
+              <li key={ pet._id }>{ pet?.name }</li>
+            )) }
           </ul>
-        )}
-        {!pets.length > 0 && <p>No pets to show</p>}
-        {pets.length > 0 && (
+        ) }
+        { !pets.length > 0 && <p>No pets to show</p> }
+        { pets.length > 0 && (
           <div>
-            <pre>{JSON.stringify(pets, null, 2)}</pre>
+            <pre>{ JSON.stringify(pets, null, 2) }</pre>
           </div>
-        )}
-        {!pets.length > 0 && (
+        ) }
+        { !pets.length > 0 && (
           <div>
             <div>¯\_(ツ)_/¯</div>
             <p>
@@ -29,17 +29,17 @@ export default function IndexPage({ pets }) {
               correctly
             </p>
           </div>
-        )}
+        ) }
       </main>
     </>
   );
 }
 
 const client = createClient({
-  projectId: "nffysgkj",
+  projectId: "bvh7sjvw",
   dataset: "production",
   apiVersion: "2022-12-15",
-  useCdn: false
+  useCdn: true,
 });
 
 export async function getStaticProps() {
@@ -47,7 +47,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pets
-    }
+      pets,
+    },
   };
 }
