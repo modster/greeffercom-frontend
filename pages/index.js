@@ -38,8 +38,8 @@ export default function IndexPage({ pets }) {
 const client = createClient({
   projectId: "bvh7sjvw",
   dataset: "production",
-  apiVersion: "2022-12-15",
-  useCdn: true,
+  apiVersion: "2021-10-25",
+  useCdn: false,
 });
 
 export async function getStaticProps() {
